@@ -52,7 +52,7 @@ public class Owner {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idOwner;
 
     @Column(name = "first_name")
     @NotEmpty
@@ -78,8 +78,8 @@ public class Owner {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "owner")
     private Set<Pet> pets;
 
-    public Integer getId() {
-        return id;
+    public Integer getIdOwner() {
+        return idOwner;
     }
 
     public String getFirstName() {
@@ -144,7 +144,7 @@ public class Owner {
     public String toString() {
         return new ToStringCreator(this)
 
-            .append("id", this.getId())
+            .append("id", this.getIdOwner())
             .append("lastName", this.getLastName())
             .append("firstName", this.getFirstName())
             .append("address", this.address)

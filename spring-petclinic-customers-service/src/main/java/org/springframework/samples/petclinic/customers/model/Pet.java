@@ -44,7 +44,7 @@ import org.springframework.core.style.ToStringCreator;
 public class Pet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idPet;
 
     @Column(name = "name")
     private String name;
@@ -62,12 +62,12 @@ public class Pet {
     @JsonIgnore
     private Owner owner;
 
-    public Integer getId() {
-        return id;
+    public Integer getIdPet() {
+        return idPet;
     }
 
-    public void setId(final Integer id) {
-        this.id = id;
+    public void setIdPet(final Integer id) {
+        this.idPet = id;
     }
 
     public String getName() {
@@ -105,7 +105,7 @@ public class Pet {
     @Override
     public String toString() {
         return new ToStringCreator(this)
-            .append("id", this.getId())
+            .append("id", this.getIdPet())
             .append("name", this.getName())
             .append("birthDate", this.getBirthDate())
             .append("type", this.getType().getName())

@@ -29,7 +29,7 @@ import org.springframework.samples.petclinic.customers.model.PetType;
 @Data
 class PetDetails {
 
-    private long id;
+    private long idPet;
 
     private String name;
 
@@ -41,7 +41,7 @@ class PetDetails {
     private PetType type;
 
     PetDetails(Pet pet) {
-        this.id = pet.getId();
+        this.idPet = pet.getIdPet();
         this.name = pet.getName();
         this.owner = pet.getOwner().getFirstName() + " " + pet.getOwner().getLastName();
         this.birthDate = pet.getBirthDate();
